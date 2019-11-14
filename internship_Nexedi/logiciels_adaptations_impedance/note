@@ -1,0 +1,7 @@
+Tous les logiciels présents ici fonctionnent avec Wine
+
+Pour lancer Qucs : aller dans le dossier bin, et taper "wine qucs.exe" dans le terminal
+
+Pour lancer Iowa Hills,aller dans le 1er dossier et taper "wineSmithChart.exe" dans le terminal
+
+Pour lancer RFSim99, aller dans le 1er dossier et taper "wine RFSim99.exe" dans le terminal

@@ -1,0 +1,14 @@
+Le transistor à émetteur commun a le même effet qu'un ampli op inverseur : Il met le signal de
+sortie en opposition de phase par rapport au signal d'entrée, tout en modifiant l'amplitude
+du signal d'entrée. Dans notre cas, on voit clairement que les 2 signaux sont bien en opposition de phase, et que l'amplitude est modifié suite au gain du transistor (ici environ 0.93).
+
+Egalement, on retrouve la réponse en fréquence caractéristique d'un BJT : un filtre passe bande.
+La fréquence de coupure basse étant provoquée par les capacités de découplage/liaison et la 
+fréquence en coupure haute étant provoquées par les capacités parasites internes du BJT (Cpi et
+Cmu).
+Pôle dominant est celui de Ce.
+C'est également cette capa qui est responsable du décalage de phase du signal de sortie, et d'un léger dc offset. Les 2 signaux ne sont pas parfaitement en opposition de phase, et le signal de sortie n'est pas parfaitement centré sur 0.
+
+A noter que la réponse fréquentielle a été faite en considérant une impédance de charge très élevée (donc un circuit ouvert).
+
+Plus on augmente le voltage de l'entrée, plus le gain en midband (analyse AC) est élevé.

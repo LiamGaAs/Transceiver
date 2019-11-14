@@ -1,0 +1,15 @@
+Le P1dB est le point ou l'ampli commence à être non linéaire. P3dB, c'est encore pire.
+C'est important.
+
+La puissance max d'entrée, évidemment. 
+Eventuellement (si dispo) , la valeur de la puissance quand l'ampli est en saturation (donc plus du tout linéaire.)
+
+La gain, évidemment (le S21 !)
+Pour voir si t'es bon, il faut avoir cette petite équation en tête : 
+
+Pin + Gain < P1dB . Si oui, bah ça veut dire que t'as une puissance d'entrée et un gain qui ne 
+vont pas saturer l'ampli.
+
+Si non, ça veut dire qu'avec cette puissance d'entrée et ce gain, tu vas saturer l'ampli.
+
+

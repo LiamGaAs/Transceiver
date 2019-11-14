@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name ampli_rf-rescue)(type Legacy)(uri ${KIPRJMOD}/ampli_rf-rescue.lib)(options "")(descr ""))
+)

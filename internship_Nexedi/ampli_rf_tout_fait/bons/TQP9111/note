@@ -1,0 +1,18 @@
+Pour cet ampli, on regarde les graphiques des amplis allant de 2300 MHz à 2700 MHz : 
+
+
+Pour le gain, à 2.4 GHz (graphique gain/frequence), il est égal à 29 dB. (environ...)
+
+à 2.4 GHz, le P1dB est atteint lorsque Pout = 33 dBm (environ...)
+
+Donc Pin = 33 dBm - 29 dB = 4 dBm  (Pin max ! )  
+
+
+P1dB = 33 dBm
+Pout = 30 dBm
+Gain = 29 dB
+ 
+Pout < P1dB, donc c'est bon
+
+Pin = Pout - Gain = 1 dBm
+

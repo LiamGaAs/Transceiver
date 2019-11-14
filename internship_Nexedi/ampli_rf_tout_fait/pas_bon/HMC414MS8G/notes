@@ -1,0 +1,6 @@
+Quand Vs = 5V, le gain typique est fixé à 20 dB.
+
+Le P1dB est atteint quand Pout = 27 dBm (soit en dessous de ce que l'on veut)
+
+L'ampli n'est plus vraiment linéaire quand Pout = 30 dBm.
+Il semblerait que cet ampli ne nous convienne pas.

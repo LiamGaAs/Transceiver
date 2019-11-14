@@ -1,0 +1,13 @@
+Jack = femelle
+Plug = male
+
+Overview des connections : 
+Apparemment le USRP possède des connecteurs SMA femelle.
+
+Quel est alors le SMA le plus pratique a mettre sur l'attenuateur (SMA femelle pour mettre un adaptateur SMA mâle-mâle entre les 2)  ? Faut il mettre un câble 50 Ohms entre les 2 ? Un adaptateurs 50 Ohms ?
+
+Bon, pour les SMAs femelle, j'ai choisi CONSMA003.062-G
+
+Tant pis, je vais foutre des adaptateurs mâle-mâle partout
+
+

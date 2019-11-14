@@ -1,0 +1,31 @@
+Regardons les graphiques pour des applications allant de 2.3 à 2.4 GHz : 
+
+Pour f = 2.4 GHz, on voit sur le graphique Gain/Pout que le P1dB est atteint lorsque 
+Pout = 33.6 dBm (environ...)
+
+Le gain S21, est égal (entre 2.35 GHz et 2.4 GHz, je le rappelle on émet à une fréquence centrale de 2.4 GHz avec une bande passante de 50 MHz , cf datasheet AD 9364 ! ) à 36.7 dB environ.
+
+S21 = 36.7 dB, environ.
+
+
+
+
+On peut aussi lire les graphiques pour les applications allant de 2.4 GHz à 2.5 GHz : 
+
+Pour f = 2.4 GHz, on peut lire sur le graphique Gain/Pout que le P1dB est atteint lorsque Pout = 35 dBm (environ...)
+
+Le gain S21 est égal (entre 2.4 GHz et 2.45 GHz) à sensiblement la même valeur qu'avant.
+
+Donc Pin + Gain < 33 dBm, au max.
+
+Nous on veut Pout = 30 dBm, donc Pin = 33 dBm - 36.7 dB = -3.7 dBm
+
+
+
+P1dB = 33.6 dBm (pire cas, entre 2.3 GHz et 2.4 GHz) 
+Gain = 36.7 dB
+Pout = 30 dBm
+
+Pout < P1dB, donc c'est bon ! 
+
+Pin = Pout - Gain = -6.7 dBm

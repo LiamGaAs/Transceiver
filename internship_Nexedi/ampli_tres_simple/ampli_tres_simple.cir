@@ -1,0 +1,15 @@
+.title KiCad schematic
+.include "2N2219.LIB"
+Rc1 V2 Vc 20
+Re1 Ve GND 12
+R1 V2 VR1 2.8k
+R2 VR1 GND 1.8k
+Cb1 VR1 NC_01 10u
+Ce1 Ve GND 10u
+Cc1 out Vc 10u
+RL1 out GND 1MEG
+Q1 Vc VR1 Ve 2N2219
+Supply_voltage1 V2 GND Vcc_conn
+Input_signal1 NC_02 GND Vin_conn
+output_signal1 NC_03 GND Vout
+.end

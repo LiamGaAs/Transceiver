@@ -1,0 +1,14 @@
+.title KiCad schematic
+.include "2SC5551A.lib"
+Q1 Net-_C2-Pad2_ Net-_C1-Pad1_ Net-_C3-Pad1_ 2SC5551A
+Re1 Net-_C3-Pad1_ GND 12
+Rc1 Net-_R1-Pad1_ Net-_C2-Pad2_ 20
+C3 Net-_C3-Pad1_ GND 0.1u
+C2 out Net-_C2-Pad2_ 0.1u
+C1 Net-_C1-Pad1_ in 0.1u
+R1 Net-_R1-Pad1_ Net-_C1-Pad1_ 5k
+R2 Net-_C1-Pad1_ GND 2.5k
+V2 Net-_R1-Pad1_ GND dc 10
+V1 in GND ac 1 sin(0 10m 1.9G)
+RL1 out GND 50
+.end

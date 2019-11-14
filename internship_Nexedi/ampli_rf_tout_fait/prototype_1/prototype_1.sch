@@ -1,0 +1,501 @@
+EESchema Schematic File Version 4
+LIBS:prototype_1-cache
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L attenuator:F1958 F1
+U 1 1 5D2C7880
+P 6350 4600
+F 0 "F1" H 7144 5146 50  0000 L CNN
+F 1 "F1958" H 7144 5055 50  0000 L CNN
+F 2 "attenuator:F1958" H 6150 5100 50  0001 C CNN
+F 3 "" H 6150 5100 50  0001 C CNN
+	1    6350 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L prototype_1-rescue:R-Device R2
+U 1 1 5D2C886E
+P 6350 2600
+F 0 "R2" H 6420 2646 50  0000 L CNN
+F 1 "5k" H 6420 2555 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 6280 2600 50  0001 C CNN
+F 3 "~" H 6350 2600 50  0001 C CNN
+	1    6350 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L prototype_1-rescue:R-Device R1
+U 1 1 5D2C8BAC
+P 5900 2300
+F 0 "R1" H 5970 2346 50  0000 L CNN
+F 1 "5k" H 5970 2255 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 5830 2300 50  0001 C CNN
+F 3 "~" H 5900 2300 50  0001 C CNN
+	1    5900 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L prototype_1-rescue:C-Device C1
+U 1 1 5D2C9611
+P 5750 2550
+F 0 "C1" V 5498 2550 50  0000 C CNN
+F 1 "2p" V 5589 2550 50  0000 C CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3216-10_Kemet-I_Pad1.58x1.35mm_HandSolder" H 5788 2400 50  0001 C CNN
+F 3 "~" H 5750 2550 50  0001 C CNN
+	1    5750 2550
+	0    1    1    0   
+$EndComp
+$Comp
+L prototype_1-rescue:C-Device C2
+U 1 1 5D2CB8A7
+P 6200 2900
+F 0 "C2" V 6452 2900 50  0000 C CNN
+F 1 "2p" V 6361 2900 50  0000 C CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3216-10_Kemet-I_Pad1.58x1.35mm_HandSolder" H 6238 2750 50  0001 C CNN
+F 3 "~" H 6200 2900 50  0001 C CNN
+	1    6200 2900
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6350 2450 6350 2000
+Wire Wire Line
+	5900 2000 5900 2150
+Wire Wire Line
+	6350 2750 6350 2900
+$Comp
+L prototype_1-rescue:GND-power #PWR0101
+U 1 1 5D2CC906
+P 5600 2550
+F 0 "#PWR0101" H 5600 2300 50  0001 C CNN
+F 1 "GND" V 5605 2422 50  0000 R CNN
+F 2 "" H 5600 2550 50  0001 C CNN
+F 3 "" H 5600 2550 50  0001 C CNN
+	1    5600 2550
+	0    1    1    0   
+$EndComp
+$Comp
+L prototype_1-rescue:GND-power #PWR0102
+U 1 1 5D2CCD57
+P 6050 2900
+F 0 "#PWR0102" H 6050 2650 50  0001 C CNN
+F 1 "GND" V 6055 2772 50  0000 R CNN
+F 2 "" H 6050 2900 50  0001 C CNN
+F 3 "" H 6050 2900 50  0001 C CNN
+	1    6050 2900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6350 2900 6350 3200
+Connection ~ 6350 2900
+Wire Wire Line
+	5900 2450 5900 2550
+Wire Wire Line
+	5900 2550 5900 3200
+Connection ~ 5900 2550
+$Comp
+L prototype_1-rescue:GND-power #PWR0103
+U 1 1 5D2CD61D
+P 5100 3100
+F 0 "#PWR0103" H 5100 2850 50  0001 C CNN
+F 1 "GND" V 5105 2972 50  0000 R CNN
+F 2 "" H 5100 3100 50  0001 C CNN
+F 3 "" H 5100 3100 50  0001 C CNN
+	1    5100 3100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5750 3200 5750 3100
+Wire Wire Line
+	5750 3100 5200 3100
+Wire Wire Line
+	6050 3200 6050 3100
+Wire Wire Line
+	6050 3100 5750 3100
+Connection ~ 5750 3100
+Wire Wire Line
+	6200 3200 6200 3100
+Wire Wire Line
+	6050 3100 6200 3100
+Connection ~ 6050 3100
+Wire Wire Line
+	6500 3200 6500 3100
+Wire Wire Line
+	6500 3100 6200 3100
+Connection ~ 6200 3100
+Wire Wire Line
+	5200 3700 5200 3100
+Connection ~ 5200 3100
+Wire Wire Line
+	5200 3100 5100 3100
+Wire Wire Line
+	7100 3700 7100 3100
+Wire Wire Line
+	7100 3100 6500 3100
+Connection ~ 6500 3100
+Wire Wire Line
+	7100 3850 7100 3700
+Connection ~ 7100 3700
+$Comp
+L prototype_1-rescue:GND-power #PWR0104
+U 1 1 5D2CEFE6
+P 6100 5150
+F 0 "#PWR0104" H 6100 4900 50  0001 C CNN
+F 1 "GND" H 6105 4977 50  0000 C CNN
+F 2 "" H 6100 5150 50  0001 C CNN
+F 3 "" H 6100 5150 50  0001 C CNN
+	1    6100 5150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6050 5000 6050 5150
+Wire Wire Line
+	6050 5150 6100 5150
+Wire Wire Line
+	6200 5000 6200 5150
+Wire Wire Line
+	6200 5150 6100 5150
+Connection ~ 6100 5150
+Wire Wire Line
+	6350 5000 6350 5150
+Wire Wire Line
+	6350 5150 6200 5150
+Connection ~ 6200 5150
+Wire Wire Line
+	6500 5000 6500 5150
+Wire Wire Line
+	6500 5150 6350 5150
+Connection ~ 6350 5150
+Wire Wire Line
+	5900 5000 5900 5150
+Wire Wire Line
+	5900 5150 6050 5150
+Connection ~ 6050 5150
+Wire Wire Line
+	5750 5000 5750 5150
+Wire Wire Line
+	5750 5150 5900 5150
+Connection ~ 5900 5150
+Wire Wire Line
+	5200 4450 5200 5150
+Wire Wire Line
+	5200 5150 5750 5150
+Connection ~ 5750 5150
+Wire Wire Line
+	7100 5150 6500 5150
+Wire Wire Line
+	7100 4450 7100 4750
+Connection ~ 6500 5150
+$Comp
+L prototype_1-rescue:PWR_FLAG-power #FLG0101
+U 1 1 5D2D26C9
+P 7450 5450
+F 0 "#FLG0101" H 7450 5525 50  0001 C CNN
+F 1 "PWR_FLAG" H 7450 5623 50  0000 C CNN
+F 2 "" H 7450 5450 50  0001 C CNN
+F 3 "~" H 7450 5450 50  0001 C CNN
+	1    7450 5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L prototype_1-rescue:GND-power #PWR0105
+U 1 1 5D2D28EA
+P 7450 5550
+F 0 "#PWR0105" H 7450 5300 50  0001 C CNN
+F 1 "GND" H 7455 5377 50  0000 C CNN
+F 2 "" H 7450 5550 50  0001 C CNN
+F 3 "" H 7450 5550 50  0001 C CNN
+	1    7450 5550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7450 5550 7450 5450
+Wire Wire Line
+	5200 4150 5000 4150
+Wire Wire Line
+	5000 4150 5000 5150
+Wire Wire Line
+	5000 5150 5200 5150
+Connection ~ 5200 5150
+Wire Wire Line
+	7650 4150 7650 5150
+Connection ~ 7100 5150
+Wire Wire Line
+	7100 4150 7650 4150
+Wire Wire Line
+	5200 4000 5000 4000
+Wire Wire Line
+	5000 4000 5000 4150
+Connection ~ 5000 4150
+$Comp
+L prototype_1-rescue:Screw_Terminal_01x02-Connector J1
+U 1 1 5D2D9A16
+P 3300 3000
+F 0 "J1" H 3218 2675 50  0000 C CNN
+F 1 "Supply" H 3218 2766 50  0000 C CNN
+F 2 "borniers:PRT-08084" H 3300 3000 50  0001 C CNN
+F 3 "~" H 3300 3000 50  0001 C CNN
+	1    3300 3000
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3500 3000 3550 3000
+$Comp
+L prototype_1-rescue:GND-power #PWR0106
+U 1 1 5D2DB1F4
+P 4100 2850
+F 0 "#PWR0106" H 4100 2600 50  0001 C CNN
+F 1 "GND" H 4105 2677 50  0000 C CNN
+F 2 "" H 4100 2850 50  0001 C CNN
+F 3 "" H 4100 2850 50  0001 C CNN
+	1    4100 2850
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3500 2900 4100 2900
+Wire Wire Line
+	4100 2900 4100 2850
+$Comp
+L prototype_1-rescue:C-Device C3
+U 1 1 5D2DC827
+P 4750 3600
+F 0 "C3" H 4865 3646 50  0000 L CNN
+F 1 "0.1u" H 4865 3555 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3216-10_Kemet-I_Pad1.58x1.35mm_HandSolder" H 4788 3450 50  0001 C CNN
+F 3 "~" H 4750 3600 50  0001 C CNN
+	1    4750 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 3850 4750 3850
+Wire Wire Line
+	4750 3850 4750 3750
+$Comp
+L prototype_1-rescue:GND-power #PWR0107
+U 1 1 5D2E1755
+P 4750 3450
+F 0 "#PWR0107" H 4750 3200 50  0001 C CNN
+F 1 "GND" H 4755 3277 50  0000 C CNN
+F 2 "" H 4750 3450 50  0001 C CNN
+F 3 "" H 4750 3450 50  0001 C CNN
+	1    4750 3450
+	-1   0    0    1   
+$EndComp
+$Comp
+L prototype_1-rescue:VCC-power #PWR0108
+U 1 1 5D2E1EF9
+P 3550 3250
+F 0 "#PWR0108" H 3550 3100 50  0001 C CNN
+F 1 "VCC" H 3567 3423 50  0000 C CNN
+F 2 "" H 3550 3250 50  0001 C CNN
+F 3 "" H 3550 3250 50  0001 C CNN
+	1    3550 3250
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3550 3250 3550 3000
+Wire Wire Line
+	5900 2000 6100 2000
+$Comp
+L prototype_1-rescue:VCC-power #PWR0109
+U 1 1 5D2EC924
+P 4500 3850
+F 0 "#PWR0109" H 4500 3700 50  0001 C CNN
+F 1 "VCC" V 4518 3977 50  0000 L CNN
+F 2 "" H 4500 3850 50  0001 C CNN
+F 3 "" H 4500 3850 50  0001 C CNN
+	1    4500 3850
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4500 3850 4750 3850
+Connection ~ 4750 3850
+$Comp
+L prototype_1-rescue:VCC-power #PWR0110
+U 1 1 5D2EE611
+P 6100 1900
+F 0 "#PWR0110" H 6100 1750 50  0001 C CNN
+F 1 "VCC" H 6117 2073 50  0000 C CNN
+F 2 "" H 6100 1900 50  0001 C CNN
+F 3 "" H 6100 1900 50  0001 C CNN
+	1    6100 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6100 1900 6100 2000
+Connection ~ 6100 2000
+Wire Wire Line
+	6100 2000 6350 2000
+$Comp
+L prototype_1-rescue:VCC-power #PWR0111
+U 1 1 5D2EFF89
+P 7450 4000
+F 0 "#PWR0111" H 7450 3850 50  0001 C CNN
+F 1 "VCC" V 7467 4128 50  0000 L CNN
+F 2 "" H 7450 4000 50  0001 C CNN
+F 3 "" H 7450 4000 50  0001 C CNN
+	1    7450 4000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7450 4000 7100 4000
+$Comp
+L prototype_1-rescue:PWR_FLAG-power #FLG0102
+U 1 1 5D2F1901
+P 8100 5450
+F 0 "#FLG0102" H 8100 5525 50  0001 C CNN
+F 1 "PWR_FLAG" H 8100 5623 50  0000 C CNN
+F 2 "" H 8100 5450 50  0001 C CNN
+F 3 "~" H 8100 5450 50  0001 C CNN
+	1    8100 5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L prototype_1-rescue:VCC-power #PWR0112
+U 1 1 5D2F1C82
+P 8100 5650
+F 0 "#PWR0112" H 8100 5500 50  0001 C CNN
+F 1 "VCC" H 8118 5823 50  0000 C CNN
+F 2 "" H 8100 5650 50  0001 C CNN
+F 3 "" H 8100 5650 50  0001 C CNN
+	1    8100 5650
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8100 5450 8100 5650
+Text Label 4150 4300 0    50   ~ 0
+RFin
+$Comp
+L Device:C C5
+U 1 1 5D1F0A20
+P 4600 4300
+F 0 "C5" V 4348 4300 50  0000 C CNN
+F 1 "100p" V 4439 4300 50  0000 C CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3216-10_Kemet-I_Pad1.58x1.35mm_HandSolder" H 4638 4150 50  0001 C CNN
+F 3 "~" H 4600 4300 50  0001 C CNN
+	1    4600 4300
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C4
+U 1 1 5D1F0F14
+P 8050 4300
+F 0 "C4" V 7798 4300 50  0000 C CNN
+F 1 "100p" V 7889 4300 50  0000 C CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3216-10_Kemet-I_Pad1.58x1.35mm_HandSolder" H 8088 4150 50  0001 C CNN
+F 3 "~" H 8050 4300 50  0001 C CNN
+	1    8050 4300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4750 4300 5200 4300
+Wire Wire Line
+	7100 4300 7900 4300
+$Comp
+L prototype_1-rescue:sma_jack-custom_sma SJ1
+U 1 1 5D1E3374
+P 3500 4300
+F 0 "SJ1" H 3608 4715 50  0000 C CNN
+F 1 "sma_jack" H 3608 4624 50  0000 C CNN
+F 2 "sma_custom:CONSMA003.062-G" H 3500 4000 50  0001 C CNN
+F 3 "" H 3500 4000 50  0001 C CNN
+	1    3500 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3950 4300 4450 4300
+$Comp
+L power:GND #PWR0113
+U 1 1 5D1E4FBB
+P 3950 4500
+F 0 "#PWR0113" H 3950 4250 50  0001 C CNN
+F 1 "GND" H 3955 4327 50  0000 C CNN
+F 2 "" H 3950 4500 50  0001 C CNN
+F 3 "" H 3950 4500 50  0001 C CNN
+	1    3950 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0114
+U 1 1 5D1E53E4
+P 3950 4050
+F 0 "#PWR0114" H 3950 3800 50  0001 C CNN
+F 1 "GND" H 3955 3877 50  0000 C CNN
+F 2 "" H 3950 4050 50  0001 C CNN
+F 3 "" H 3950 4050 50  0001 C CNN
+	1    3950 4050
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3950 4500 3950 4450
+Wire Wire Line
+	3950 4050 3950 4150
+$Comp
+L prototype_1-rescue:sma_jack-custom_sma SJ2
+U 1 1 5D1E8D40
+P 9000 4300
+F 0 "SJ2" H 8722 4254 50  0000 R CNN
+F 1 "sma_jack" H 8722 4345 50  0000 R CNN
+F 2 "sma_custom:CONSMA003.062-G" H 9000 4000 50  0001 C CNN
+F 3 "" H 9000 4000 50  0001 C CNN
+	1    9000 4300
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8200 4300 8550 4300
+$Comp
+L power:GND #PWR0115
+U 1 1 5D1EAE95
+P 8550 4550
+F 0 "#PWR0115" H 8550 4300 50  0001 C CNN
+F 1 "GND" H 8555 4377 50  0000 C CNN
+F 2 "" H 8550 4550 50  0001 C CNN
+F 3 "" H 8550 4550 50  0001 C CNN
+	1    8550 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0116
+U 1 1 5D1EB2FC
+P 8550 4050
+F 0 "#PWR0116" H 8550 3800 50  0001 C CNN
+F 1 "GND" H 8555 3877 50  0000 C CNN
+F 2 "" H 8550 4050 50  0001 C CNN
+F 3 "" H 8550 4050 50  0001 C CNN
+	1    8550 4050
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8550 4050 8550 4150
+Wire Wire Line
+	8550 4550 8550 4450
+Text Label 8200 4300 0    50   ~ 0
+RF_OUT
+Connection ~ 7100 4750
+Wire Wire Line
+	7100 4750 7100 5150
+Wire Wire Line
+	7100 5150 7650 5150
+Text Label 6350 3050 0    50   ~ 0
+D5_in
+Text Label 5900 3050 0    50   ~ 0
+D2_in
+Text Label 3550 3150 0    50   ~ 0
+VCC
+Text Label 4850 4300 0    50   ~ 0
+RF_in
+Text Label 7300 4300 0    50   ~ 0
+RF_out
+$EndSCHEMATC

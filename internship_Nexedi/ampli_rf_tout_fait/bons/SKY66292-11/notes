@@ -1,0 +1,23 @@
+Gain typique de 35.5 dB, 8dBm maxi en entrée
+
+Le P3dB est à 36.5 dBm (l'ampli n'est plus vraiment linéaire quand Pout = 36.1 dBm=
+D'ailleurs, la puissance de sortie est égale à 36.5 dBm quand l'ampli est bien saturé.
+
+Sur le graphe qui met le gain en ordonnée et Pout en abscisse, on peut end déduire le P1dB : 
+Il est égal à 35 dBm environ. Donc on sait que la condition suivante doit être
+ABSOLUMENT respéctée : Pin + Gain < 35 dBm
+
+Puisque le gain est typiquement de 35.5 dB, Pin doit donc être égal (au plus) à -0.5 dBm
+Pour les tests de l'ampli, Pin a été fixé à -30 dBm (pour être sûr d'avoir les bonnes valeurs,
+que l'ampli soit linéaire...) 
+
+
+Gain = 35.5 dB
+P1dB = 35 dBm 
+Pout = 30 dBm (ce que l'on s'est fixé comme cahier des charges) 
+
+Pout < P1dB, donc c'est bon.
+
+Pout - Gain = -5.5 dBm
+
+Pin = -5.5 dBm

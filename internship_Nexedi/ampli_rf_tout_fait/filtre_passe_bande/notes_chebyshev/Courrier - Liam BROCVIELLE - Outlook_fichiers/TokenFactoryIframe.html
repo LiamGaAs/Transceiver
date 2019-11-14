@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="TokenFactoryIframe_data/suiteux.js"></script>
+</head>
+<body>
+    <script type="text/javascript" nonce="OF3wftrXEgsHaGyn2iSH/dOqA2mv5xAYPih43b9j0fg=">
+        
+                    
+                var requestExecutorSettings = {
+                    originAuthorityValidator: O365SuiteServiceProxy.ServiceHandlers.validateOrigin,
+                    trustedOriginAuthorities: ["\u005Eoutlook\\.office365\\.com\u0024"],
+                    allowedEndpoints: [{host: "^webshell\\.suite\\.office\\.com$",paths: ["^api/(.*?)"]},{host: "^ocws\\.officeapps\\.live\\.com$",paths: ["^ocs/(.*?)"]},{host: "^graph\\.microsoft\\.com$",paths: ["^v1\\.0/(.*?)"]},{host: "^management\\.azure\\.com$",paths: ["^providers/Microsoft.BusinessAppDiscovery/(.*?)"]},{host: "^.*[0-4]-sphome[dsbp]\\.svc\\.ms$",paths: ["^api/(.*?)"]},{host: "^substrate\\.office\\.com$",paths: ["^search/(.*?)"]}],
+                    allowedResources: [{resource: "officeapps.live.com",hosts: ["ocws.officeapps.live.com"]},{resource: "graph.microsoft.com",hosts: ["graph.microsoft.com"]},{resource: "webshell.suite.office.com",hosts: ["webshell.suite.office.com"]},{resource: "management.azure.com",hosts: ["management.azure.com"]},{resource: "^.*[0-4]-sphome[dsbp]\\.svc\\.ms$",hosts: ["^.*[0-4]-sphome[dsbp]\\.svc\\.ms$"]},{resource: "substrate.office.com",hosts: ["substrate.office.com"]}],
+                    shouldAttachOauthTokens: true,
+                    trustedOriginAuthoritiesSetFromServer: true
+                };
+
+                O365SuiteServiceProxy.RequestExecutorMessageProcessor.init(requestExecutorSettings);
+            
+                    
+                var tokenFactorySettings = {
+                    clientId: "89bee1f7-5e6e-4d8a-9f3d-ecd601259da7",
+                    instance: "https\u003A\/\/login.microsoftonline.com\/",
+                    tenant: 'common',
+                    cacheLocation: "sessionStorage",
+                    clientShellServiceOrigin: "https\u003A\/\/webshell.suite.office.com",
+                    parentPageOrigin: "https\u003A\/\/outlook.office365.com",
+                    shsid: "b5129087-63d2-4f99-9b82-7126eaec04cb",
+                    upn: ""
+                };
+
+                O365TokenFactoryIframe.TokenFactoryInsideIframe.init(tokenFactorySettings);
+    </script><iframe id="adalRenewFramehttps://webshell.suite.office.com" style="visibility: hidden; position: absolute; height: 0px; width: 0px;" src="https://login.microsoftonline.com/common/oauth2/authorize?response_type=token&amp;client_id=89bee1f7-5e6e-4d8a-9f3d-ecd601259da7&amp;resource=https%3A%2F%2Fwebshell.suite.office.com&amp;redirect_uri=https%3A%2F%2Fwebshell.suite.office.com%2Fiframe%2FTokenFactoryIframe&amp;state=c89f3879-d136-4639-9aae-107981e6ae5e%7Chttps%3A%2F%2Fwebshell.suite.office.com&amp;client-request-id=70a12772-c778-4510-a3d2-8f2622ebf7a4&amp;x-client-SKU=Js&amp;x-client-Ver=1.0.15&amp;prompt=none&amp;login_hint=liam.brocvielle%40isen.yncrea.fr&amp;domain_hint=isen.yncrea.fr"></iframe>
+
+
+<iframe id="adalRenewFramehttps://graph.microsoft.com" style="visibility: hidden; position: absolute; height: 0px; width: 0px;" src="https://login.microsoftonline.com/common/oauth2/authorize?response_type=token&amp;client_id=89bee1f7-5e6e-4d8a-9f3d-ecd601259da7&amp;resource=https%3A%2F%2Fgraph.microsoft.com&amp;redirect_uri=https%3A%2F%2Fwebshell.suite.office.com%2Fiframe%2FTokenFactoryIframe&amp;state=1e740c3b-6fb9-4335-9316-14dd30011c45%7Chttps%3A%2F%2Fgraph.microsoft.com&amp;client-request-id=7b6d503f-d0c0-4e22-9eb1-7a805a201861&amp;x-client-SKU=Js&amp;x-client-Ver=1.0.15&amp;prompt=none&amp;login_hint=liam.brocvielle%40isen.yncrea.fr&amp;domain_hint=isen.yncrea.fr"></iframe></body></html>

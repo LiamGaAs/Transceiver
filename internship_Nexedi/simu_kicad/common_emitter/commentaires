@@ -1,0 +1,12 @@
+Réponse en fréquence caractéristique d'un passe bande
+A la différence que dans les basses fréquences, je pense observer un gain de +40db/decade
+Au plus les capas de découplage/liaison sont grandes, au plus la bw est large
+La phase est semblable à celle d'un passe bande.
+Dans les basses fréquences, elle démarre de 0° pour terminer à -180°
+Dans les hautes fréquences, elle démarre de 180° pour terminer à 0°
+Pour un passe bande classique, c'est de 90° à -90° sur l'ensemble des fréquences
+Les 2 circuits partagent une caractéristique commune : une phase de 0° à la fréquence centrale
+de la bande passante.
+
+Concernant la capacité possédant le pôle dominant, après avoir joué un peu avec les valeurs des 3 capas, la capacité de Bypass Ce est celle qui conditionne la fréquence de coupure en basse fréquence. Elle possède le pôle dominant. Une analyse par SCTC sur le circuit devrait nous confirmer cette conclusion.
+

@@ -1,0 +1,23 @@
+Ceci est un atténuateur analogique. L'atténuation est déterminée par une tension (ici Vc) 
+
+Pin = 30 dBm maxi de chez maxi (AD : 7.5 dBm, ok) 
+
+Vdd est typiquement à 5V
+
+MODE est le pin qui set l'atténuation en pente négative (LOW)
+ou positive (HIGH) 
+LOW = 0.4V
+HIGH = 1V
+
+Si pente POSITIVE, Vc va de 0.5V à 4.5V
+Si pente négative, Vc va de 0 à 3.3V
+
+Vc contrôle l'atténuation
+
+Bon, mettons du concret. Voyons un peu comment cela se passe avec les 3 amplis : 
+
+Si on connecte le SKY66292 en sortie : 
+	Pinrfsa = 7.5 dBm, Pinsky = -5.5 dBm
+	Donc le RFSA doit avoir une atténuation de -12 dB
+
+-12 dB est une attenuation à pente négative

@@ -1,0 +1,279 @@
+Lundi 20 Mai : Renseignement sur ce qui est utile pour créer un splitter : coupler/power divider (WIlkinson divider, power divider, coupler 4 ports)
+Etude de la datasheet du AD9364 pour voir ce qui en sort, et connaître les données d'entrée pour l'ampli connecté juste derrière.(Je pense qu'il faudra cependant revenir dessus plus tard...)
+
+Mardi 21 Mai : Re datasheet ! Replongée dans les BJT (ils servent à quoi, petit signal, configurations fondamentales...)
+
+Mercredi 22 Mai : Continuation de la révision du cours : Transistors en cascade, miroirs de courant, charges actives,réponse en basses et hautes fréquences d'un ampli BJT
+ce cours en particulier est très intéressant pour le projet puisque constater la réponse en fréquence de l'ampli sera déterminant.Ne pas hésiter à y passer du temps pour comprendre ! 
+
+Jeudi 23 Mai : Finalisation de la révision de la réponse en basse fréquence. J'ai attaqué la réponse en HF. Choisir un transistor dont le gain se casse la tronche (à cause des capas internes parasites)
+bien après 2.4/2.6 GHz me semble être un bon démarrage dans la conception de l'ampli.
+
+Vendredi 24 Mai : Ok pour l'OCTC sur des configuration simples. Vidéo bien foutue sur un cascode, si jamais dans le futur je dois faire un cascode. Confirmation que la 1ère chose 
+à regarder avant toute conception est bien la fréquence de coupure en haute fréquence provoquée par Cpi et Cmu. Etude de la "Transition frequency".
+Repérage de plusieurs transistors avec un GBW (fréquence de transition) intéressant.
+Calculs pour le test. Amplis de puissance sont différents de ce qu'on a vus...
+50 ohms en sortie est pas forcémment le mieux... Encore des choses à apprendre.
+Calcul du courant de polarisation. Bias tee ? Je choisis direct un ampli rf pour le test,
+histoire de valider son bon fonctionnement et que j'ai un bon gain.
+
+Lundi 27 Mai : Ok on a choisi l'ampli RF. Mais maintenant, faut que je vois la théorie derrière 
+les amplis de puissance (les classes, leurs propriétés propres, comment on les construit).
+Paramètres de l'amplis caractérisés, en vue du 1er jet. Commencement de la prise en main de Kicad,
+notamment pour la simulation utilisant un moteur SPICE. Récupération (je pense) du fichier spice
+du transistor choisi.
+
+Mardi 28 mai : Prise en main de kicad. Mon Dieu, qu'il m a bien cassé les pieds !
+(car tutos datent d'avant la 5.1, qui change bien). Du coup schéma électrique ok.
+Modèle SPICE importé. Simulation ? 
+Réalisation du schéma électrique afin de pouvoir tester avec un VNA le circuit.
+Note : Zin != Zsource* , donc petite perte de puissance ici. Aussi, vu qu'on utilise des
+résistances afin de biaiser le transistor, on peut potentiellement avoir des surprises...
+
+
+Mercredi 29 Mai : 
+Calcul définitif du circuit de test.Ecriture du modèle SPICE depuis la datasheet.
+Pour chaque composant à simuler, un modèle SPICE peut être récupéré sur internet,
+ou bien écrit si les paramètres sont présents dans la datasheet.
+Bon réponse de Flament : Ic doit en fait être égal à 0.2A, donc le transistor trouvé n'est pas bon.
+
+
+Vendredi 31 Mai : Mettre une résistance de dégéréscance est bon. 
+En rf, on s'en tartine le fion, mais pas en DC. ça permet une polarisation autrement que par Beta.
+DU coup, ce qu'il faut regarder dans la datasheet c'est la courbe Ic/Vce.
+En fct du courant Ic, on aura notre valeur Vce ! Donc on sait quel résistance Rc et Re on devra
+mettre.Je galère à trouver un transistor avec un Ic à 200 mA (ou un peu plus) avec un bon gain !
+Ok, on reprend à 0 les amplis de puissance, de classe A. Comment les conçevoir...
+
+Lundi 3 Juin : Etude du biais du transistor en y foutant un diviseur de tension, et en y mettant 
+une résistance à l'émetteur. Le diviseur permet que le biais ne soit plus hyper dépendant du B 
+qui peut varier (on le voit dans la datasheet) en fct de la température. La résistance de 
+l'émetteur permet une stabilité par rapport à Ic. Si Ic bouge, la résistance compense dans l'autre 
+sens. Maintenant, étude de l'impact des capacités parasites pour notre fréquence de 2.4 GHz.
+Etude bias tee.
+
+Mardi 4 Juin : Finalisation de la réponse pour Flament, continuation de l'étude du bias tee.
+Acquisition SPICE model du BFQ ainsi que ses paramètres S.
+
+Changement de strat ici : Simulation d'un ampli classe A basique avant toute autre chose ! 
+
+
+Mercredi 5 Juin : Kicad et LTspice pour simuler un circuit à la con. Analyse tension/intensité dans le temps (DC).
+
+Jeudi 6 Juin : finalisation du bon circuit analyse DC 
+Analyse en AC.OK, on retrouve une réponse bien connue des BJT. 
+Donc ok pour simu sur LTspice. 
+Simu AC kicad ok.
+Simu avec résultat pas probable sur kicad...
+Aussi sur simu en fréquence, atténuation de 26 db du signal !! Pourquoi une telle atténuation ?
+
+
+Vendredi 7 juin et mardi 8 juin : Ok, les noeuds base et collecteur du transistor étaient inversés
+Bon fonctionnement de simu validé. Est bien avec des valeurs de tension d'entrée très faibles (jusque 100 mV, après ça sature et instabilité du signal, éventuellement).
+Réponse à la question soulevée le 6 juin : l'amplitude AC doit être fixée à 1V. Dans ce cas,
+le gain midband sur la réponse en fréquence et le gain constaté dans la réponse temporelle
+correspondent bien. Je ne sais pas pourquoi ça doit être fixé à 1V spécifiquement, mais ça marche.
+
+Mercredi 12 Juin : Importation et choix des bons footprints pour les différents composants utilisés
+sur le schéma électrique.Routage du PCB
+
+Jeudi 13 Juin : Finalisation du routage du PCB. Envoi des fichiers Gerber et drill à Christophe pour vérification.
+Pour l'ampli de puissance, 3 grosses directions : 
+
+-Ampli RF tout fait (faut cependant le polariser en choisissant les bonnes valeurs de chokes, les bonnes valeurs de capacités, les matching à faire en entrée et en sortie
+
+
+-Ampli avec uniquement des transistors. Demande beaucoup plus de travail, mais un choix total sur le gain que l'on veut.
+
+Dans un 1er temps, regardons pour l'ampli RF tout fait : histoire d'avoir un proto fonctionnel, une preuve que cela peut fonctionner.
+Confirmation de cette dernière solution. Egalement, finalisation de l'écriture du rapport pour JP
+concernant l'utilisation de Kicad pour un ampli à la con. 
+
+Vendredi 14 Juin : Ok, j'ai trouvé pourquoi le signal de sortie (mesuré après la capa de sortie) 
+sature. En fait, si on mesure la tension sur le collecteur avant la capa de sortie, on constate que
+la tension atteint Vcc en amplitude dans le "positif".
+
+Lundi 17 Juin : Envoi du PCB à PCBway pour validation et choix définitf des composants.Egalement envoi de la commande Farnell
+Elimination de 2 amplis RF.
+
+Mardi 18 Juin : Attente de la réponse de Flament. Analyse du filtre qui vient après le LNA, (re)découverte des circuits résonants, spécialement celui appelé "Tank Circuit". Permet de laisser passer le signal (sans modification du gain) pour une certaine fréquence. La résistance à son entrée permet de moduler le "plat" de la courbe (plus ou moins de bande passante).
+Ce pic de "laisser s'appeler" s'appelle la fréquence de résonnance, puisqu'il apparaît pour une fréquence bien définie. (par capa et inductance).
+
+TODO demain : se replonger dans le cours de Ducatteau et internent pour revoir comment designer des inductances, capacités en microstrip.Egalement des résistances
+Résistances = Slug et capas/inductances = stub ? 
+Pour faire les filtres, t'as plusieurs possibilités : Microstrop, filtres à lignes couplées
+
+Mercredi 19 Juin : Découverte de l'existance de Qucs, un petit équivalent à ADS. En tout cas, il propose une simulation avec des abaques de Smith. J'ai plus urgent à faire pour le moment, mais intéressant pour la suite, ce logiciel.
+J'ai beaucoup de mal à comprendre comment faire une capacité/inductance en Microstrip
+
+Vendredi 21 Juin : Un résonnateur est une capa + inductance en parallèle.Ces 2 là peuvent être
+réalisés en circuit ouverts/fermés. Leur longueur et largeur respectives dépendront s'ils sont en CO ou CC
+
+
+Lundi 24 Juin : Bon JP a trouvé une bande qui serait cool pour nous. La bande 39, à 1.9 GHz, ayant une BW de 40 MHz. Découverte de DECT et PHS.
+DECT est une technologie radio, au même titre que GSM et possède une allocation de fréquence de 1.88GHz à 1.9GHz. La bande entre 1.9GHz et 1.92GHz n'est pas utilisée pour le moment, donc on va faire un ampli qui émet donc de 1880MHz à 1920MHz.
+
+Mardi 25 Juin : Updates de JP. Prévoir également la partie réception. 2 antennes, l'ampli RF est le TQP9111, le LNA est celui fourni par JP, soit le TQL9093.
+Reste donc à trouver les 2 antennes, faire le matching dans la partie réception et émission.
+Objectifs de la semaine : 
+
+			Choisir les antennes adaptées
+			Etudier la datasheet du LNA
+			FInir le filtre en émission (si antennes ok)
+			Faire le filtre en réception (si antennes ok) 
+			Réetudier la datasheet du moduleur.
+
+Pour l'instant, balek des filtres. Tenter de simuler les antennes en Microstrip. Deadline jeudi.
+Si jamais je n y parviens pas, je prends des antennes toutes faites, puis je passe une commande groupée pour l'ampli RF, le LNA et les 2 antennes.
+
+Mercredi 26 Juin : Schématisation et simulation d'un circuit en TL pour une antenne patch sur Qucs.
+LTSpice fait des lignes de transmission, mais uniquement le modèle du câble coaxial.
+Donc Qucs nous sauve la mise.
+
+Jeudi 27 Juin : Conception filtre passe bande en lignes microstrip couplées. Qucs possède un outil qui permet la création de tels filtres très rapidement.
+Comparaison des différentes implémentations de filtres : Bessel, Butterworth, Chebyshev, soit en OC, soit en terminaison fermée.
+
+
+Vendredi 28 Juin : Compréhension de comment créer des filtres passe bande en technologique microruban. Filtre passe bande terminé. Juste choisir lequel précisemment je dessinerai.
+Antenne microstrip finie également. Finalement c'est juste un résonnateur série, avec une grande impédance d'entrée.Le LNA et ses composants c'est ok aussi. Reste plus que l'ampli RF et son circuit de fonctionnement. Le plus gros morceau.
+
+Lundi 1er Juillet : Plus qu'à déterminer quels SMA prendre, et ce qu'il faut mettre entre les différentes cartes. Car oui, je prévois de découper ce projet en plusieurs parties.
+Finalement, j'ai pris une antenne toute faite. 1ère approche des mesures en VNA. 
+Ce dernier est bête est méchant : il faut lui apprendre ce qu'est un court-circuit, un circuit ouvert, une charge à 50 Ohms. Du coup il faut aussi penser à commander des terminaisons de ces 3 types.
+
+TODO demain : continuer l'apprentissage des mesures, calibration avec VNA (il semble que pour mesurer S11, on se fiche du port 2). 
+Objectif aussi dans la semaine de souder les composants et mesurer les perfs du petit ampli.
+Autre objectif : Ceci nécessite que l'objectif 1 soit fini. Il faut également commander tous les composants avant la fin de semaine.
+
+Mardi 2 Juillet : Meilleure compréhension du VNA. Pas encore de contact avec des entreprises. J'aurai besoin d'un four. Le LNA, l'atténuateur et l'ampli RF sont surface, et bien trop petits pour être soudés à la main.Commencement du PCB de la carte atténuateur.
+
+Mercredi 3 Juillet : COntinuation PCB prototype. Soudage et mesure DC de l'amplificateur.
+Comparaison des valeurs des tensions avec celles relevées au multimètre.
+En pratique, il apparaît clairement que au plus la température du transistor monte, Ve augmente, Vb augmente et Vc diminue.
+La simulation de l'OP sur LTSpice nous donne les résultats suivants : Vb = 2.75V, Ve = 10.95V et Vc = 6.79V.
+En réalité, vite après avoir alimenté le transistor, les résultats suivants ont été relevés : Vc = 6.5V, Vb = 2.9V, Ve = 2.19V. 
+Quand on attend et qu'on remesure, voici les résultats : Vc = 6.2V, Ve = 2.33V, Vb = 2.92V
+On constate que Vb reste assez stable, mais Vc et Ve bouge beaucoup, ce qui entraine Vce et Vbe à bouger eux aussi.
+
+
+Jeudi 4 Juillet et vendredi 5 Juillet : même combat. Finition des PCB actuels. Commencement de la simulation des lignes de transmission. Filtre passe bande très chaud à trouver. Le plus simple est de le faire soi même. Faire un nouveau PCB pour les 2 antennes, ou bien les connecter direct à la sortie de l'ampli et entrée de passeband en réception ? 
+Décision : Antenne au cul de l'ampli en émission, et au cul du filtre en réception.
+
+Lundi 8 Juillet : Conception du PCB du filtre passe bande en ligne de transmission sur kicad (trouver un passe bande déjà tout fait est trop contraignant). 
+Solution à mon problème de stub en CC et CO (on les connecte à quoi ? ) . En HF, une capacité de découplage/bypass se comporte comme un CC.Donc si la TL est terminée par une terminaison gnd (i.e une TL inductive), il faut y connecter une capacité de forte capacitance (i.e faible impédance) pour y obtenir un CC.
+Raisonnement analogue concernant la TL en CO (comportement capacitif). Il faut y connecter une bobine de forte inductance (i.e forte impédance) pour y obtenir un CO. 
+Envoi à PCBWay de 3 PCB sur les 4. Le 4ème est le filtre. Je veux piger complètement pourquoi il se comporte bien avec les paramètres actuels.
+Aussi, voir pour un four, et de la pâte à braser.
+
+Mardi 9 Juillet : 
+Objectifs pour le restant de la semaine : -Voir pour un petit four/fer à air chaud afin de souder les SMD avec la pâte à braser.	
+						-Terminer le PCB du filtre. Tenter le PCB en lignes couplées, sinon se rabattre sur celui de base.
+Achat d'une pince également, le four et la pâte seront pris avec Conrad.Inductances pour le filtre coupled microstrip.
+Une fois que tout est commandé, voir avec JP pour un VNA, car j'en aurai besoin pour mesurer les performances des différents modules du prototype.
+Ne reste plus que les PCB pour les 2 versions différentes du filtre passe bande. Tout le reste a été commandé.
+Etude du filtre passe bande. Comment on le crée.
+
+Mercredi 10 Juillet : Compréhension de la conception d'un filtre passe bande (en TL classique microstrip et TL couplées microstrip). 
+
+Jeudi 11 Juillet : envoi des 2 derniers PCB. Plus qu'à attendre les 3 premiers PCB, le four ainsi que la pâte à braser pour commencer à souder.Objectifs de la semaine atteints, donc.
+J'ai le sentiment, en regardant la valeur d'impédance de S21 sur chaque diagramme de SMith,
+que j'aurai du faire des adaptations que je n'ai pas faites.Pour le lol j'essaie d'installer SlapOS histoire de lancer un serveur pour gérer une réseau 4G/5G.
+
+Vendredi 12 Juillet : Commencement de l'écriture des rapports des différentes parties.Je laisse tomber slapOS, ça n'est pas l'objectif du projet.
+
+Lundi 15 Juillet : Réception de 3 PCB sur les 5. Rapport whatsapp à JP. Commande du four et de la pâte à braser correctement cette fois ! Continuation de l'écriture des rapports. Simulations sur Qucs (circuit équivalement en réception/émission, découverte de la possibilité de simulation du bruit).
+
+Mardi 16 Juillet : réception ce jour du four. J'attends les derniers PCB afin de commencer à souder le tout. Prévoir l'achat de fils de moins de 0.4 mm de diamètre afin de faire les vias.
+Attente de réponse pour mon pb avec Qucs.J'ai compris comment marche ces fichus filtres passe bandes en lignes couplées. Enfin. Je suis en mesure de refaire un passe bande "from scratch".
+
+Mercredi 17 Juillet : ENfin j'arrive à voir les cercles de stabilité du filtre.
+Tentative d'incorporation des paramètres S du LNA dans Qucs. C'est un échec pour le moment.
+COmmencement de la réflexion sur les réseaux d'adaptations. J'ai compris le pourquoi, et comment les réseaux d'adaptations fonctionnent. En fait, 50 Ohms en entrée et 50 Ohms en sortie c'est pas forcémment le mieux. Pour trouver le MAG, on a besoin des paramètres S, et savoir que out = L*
+et in = S*. 2 équations qui résument tout, et qui te disent pour une valeur de charge/source donnée, quelle est la meilleure impédance de source/charge à mettre en entrée/sortie pour avoir le MAG (si K>1,sinon on parle de MSG).
+
+Jeudi 18 JUillet : Voir aujourd'hui pourquoi la longueur théorique de ligne (lambda/4) est trop petite. Voir également l'optimisation du transfert de puissance et trouver pour le LNA et l'ampli rf, quelle doit être la valeur de charge pour une impédance de source à 50 Ohms.
+Vu sur le site de DHL : un évenement externe peut être à l'origine d'un retard de plusieurs jours concernant la livraison du paquet (dommages, écriture des chinois pas lisibles, perte d'un code).
+Compréhension de la différence entre adaptation déstinée à préserver le gain et l'adaptation déstinée à maintenir un bruit minimum.Si l'on fait l'un, alors on prend le risque que l'autre ne soit pas fou. Genre avoir un transfer de gain max, mais avoir un bruit élevé. 
+Ou faire l'adaptation au bruit minimum et avoir un gain  pourri.		
+Etudier le bruit au niveau de la réception est PRIMORIDAL.
+Résistance de bruit équivalente liée au bruit thermique (4kTR ) ? 
+
+Vendredi 19 Juillet : Revue de la partie du cours WTA sur le bruit et la linéarité dans la partie réception.
+
+Lundi 22 Juillet : Ok pour les adaptations. Réussite du plotting des paramètres S de l'ampli RF et du LAN sur Qucs. l'apli RF n a apparemment pas besoin d'adaptation.
+Le LNA peut être adapté en bruit. J'ai des résultats de simulation. On verra bien si on a la même chose lors des mesures.
+Egalement, pour le futur, je pense que prendre des transistors de type FET peut être pas mal. Apparemment, ils sont bien pour les applications haute puissance et haute fréquence. Donc typqiquement ce qu'il nous faudrait.Commencement de la rédaction du rapport.
+
+mardi 23 Juillet : Main dans le cambouis concernant l'implantation des réseaux d'adaptations pour les 2 amplis.
+Slug a l'air d'être pas mal.Numéro EORI de merde ! Je dois m'occuper de ce truc si je veux reçevoir mes PCB bloqués.
+L'adapation en slug a l'air de plutôt bien fonctionner sur l'ampli RF.
+
+
+Mercredi 24 Juillet : Adaptations en slug sur les 2 amplis. L'adaptation en stub semble marcher moyen. Mise en évidence d'un bien meilleur gain et/ou meilleur return loss.
+Les petits morceaux de pistes utilisés pour raccorder les pads des amplis et les TL améliorent de manière violente (et je sais pas pourquoi) les perfs lorsqu'un réseau d'adaptation est présent.
+
+
+Jeudi 25 Juillet : Contact avec Adva pour rattraper les soudures foireuses du four. COmmencement des PCB des amplis matchés. SImulation de la partie émission (filtre + ampli rf, atténuateur n a a priori pas de paramètres S dispos. Simulation également de la partie réception (filtre + LNA).
+Ok pour les PCB. Désormais je m'intéresse à la réception, plus précisemment comment on set l'oscillateur local.
+Pas vraiment besoin de ça, un device style URSPb200 le fait bien.
+
+Vendredi 26 Juillet : soudage du reste des composants sur les cartes. Faudra juste que je revienne à Adva pour souder les borniers que j'ai oublié, et de souder les vias qui sont sur la bottom layer.
+Refaire le PCB du filtre pour qu'il corresponde à celui que j'ai calculé moi même (qui a une perf légèrement meilleure que le même dimensionné par Qucs).
+Commander les prototypes du lna et de l'ampli qui sont bien adaptés. Commander le filtre également avec.
+
+
+Lundi 29 Juillet : PCB atténuateur commandé. Soudures sur le protoype actuel terminées. Se renseigner sur un SDR pas trop cher.
+A priori, les amplis construits sur des transistors en cascodes sont bien (Impédance entrée/sortie élevé, gain plus haut, meilleure isolation entrée/sortie).
+Todo demain : essayer de piger enfin la simulation du bruit sur Qucs. Continuer le rapport démarré semaine dernière et éventuellement commencer l'étude d'un ampli à base d'un ou des transistors.
+Classe A classque ou bien cascode. LNA est un cascode.
+
+Mardi 30 Juillet : Correction d'une erreur dans la conception du PCB de l'ampli RF. Résistances de polarisation pour Vcc1 et Vcc2 absentes, ce qui force à prendre un Vcc très petit dans l'état actuel des choses (125 mV) 
+
+Mercedi 31 Juillet : recherche bibliographique concernant les réseaux mobiles en France. Continuation de l'écriture du rapport.J'ai efin pigé que SlapOs simule une eNodeB, ainsi que le EPC. ça sera sur un chromebook. Du coup, un peu de lecture de documentation de SlapOs concernant cette facette là en particulier.
+
+Jeudi 1er Août : Je continue à me renseigner sur SlapOs NMS. Attente du numéro EORI avant toute nouvelle commande. J'essaie de mettre un nouveau serveur, mais il est pas reconnu comme mon ordi ! 
+Je pense que je renseigne mal les adresses url et api.
+Bon pour l'instant ça me soule. Je vais faire du kicad, ça me détendra...
+
+Vendredi 2 août : Plongée dans les MOSFET.Plusieurs PCB reçus : Les 1ers filtres crées dans le 1ère paquet.
+Dans le 2ème paquet : le LNA matché, l'ampli RF matché (toujours 2 résistances manquantes) et la dernière version de filtre. Doit encore suivre l'atténuateur.
+Lundi, commander la version de l'ampli avec les 2 résistances de polarisation et les 2 résistances sur Mouser. Inventaire des composants. Un MOSFET est VRAIMENT ce qu'il me faut. Un gros courant peut passer sur le drain, autorisant des gains élevés. L'alim doit donc être assez violente aussi.
+
+Lundi 5 août : Ok pour le bruit en réception. Ok pour structure RRH. Commencement construction ampli avec transistors (MOSFET et BJT). J'ai le temps car j'attends mes PCB ! 
+
+Mardi 6 août : Mains dans le cambouis concernant les adaptations slugs,stubs ainsi que la stabilité de l'ampli avec des chokes RF.
+
+Mercredi 7 août : ENcore et encore l'étude des adaptations. Un cascode serait bien pour limiter l'effet Miller (les capas parasites) dans les HF. 
+Une paire différentielle est apparemment utile pour créer un LNA.
+Cascode à l'air cool. En tout cas, il réagit mieux que les précédents lors des adaptations.
+
+Jeudi 8 août : rédaction en anglais des différents rapports. Pas grand chose d'autre à signaler.
+
+Vendredi 9 août : Finition des rapports et envoi des 2 à Klaus et JP.
+
+Lundi 12 août : Laisse de côté le prototype (car plus rien à chercher au final dessus) et je m'intéresse à la conception de l'ampli de puissance depuis les transistors.
+
+Mardi 13 août : Ok je commence à piger. On raisonne en onde de tension incidentes et réfléchies .Cela reste néanmoins des tensions. L'idée peut être de mettre 2 ou 3 transistors les uns derrière les autres. Ce qui signifie que nous n'avons pas besoin de fournir 1W comme des bourrins sur le collecteur. Si on a 3 transistors, avoir une puissance de 10 dBm sur chaque collecteur peut être suffisant (10 mW). Du coup, en terme de courant, ça donne : P = R*(i^2)
+=> I = sqrt(P/R) = 14.1 mA sont nécessaires pour alimenter une charge de 50 Ohms afin de lui délivrer 10 mW. La tension de polarsation va fixer ce courant, choisi Vcc comme tu le sens, pourvu que Vce soit dans les cordes du transistor.
+
+Mercredi 14 août : TODO, polariser correctement le transistor, et comprendre comment marche l'adaptation sur plusieurs étages. Attention à la stabilité.
+
+Vendredi 16 août : Compréhension de la bonne polarisation. Ajout d'une résistance série pour la stabilité.
+
+Lundi 19 août et Mardi 20 août : TOujours la polarisation. Obtenir des paramètres Spice devient compliqué. Les paramètres S, pour peu qu'ils soient donnés ne correspondent que rarement 
+aux spécifications que j'ai décidé de donner. SICK. Les transistors GaN (JFET) semblent les plus utilisés ici pour notre application. Les datasheet arrêtent pas de parler de la performance "Load Pull".
+Visiblement, c'est une technique utilisée très fréquemment dans les design d'ampli de puissance.
+Selon le cours de RF de M2 (et wikipédia), il faut caractériser un PA en grand signal, donc la linéarité n'est plus respectée. 
+L'adaptation en puissance va éviter de passer 8 ans sur le problème que je rencontre depuis 1 semaine : les valeurs de courants/tension sont trop hautes, si l'on cherche à faire une adaptation en gain.
+Comme le dit un mec sur un forum, le but est de trouver par mesure ou simu l'impédance de charge qui permet un tranfert de puissance maximal.Et non pas de gain.
+Ah. Plus j'avance, plus je constate que ce que j'ai vu jusque maintenant est pas adapté aux amplis de puissance.
+Les paramètres X sont une généralisation des paramètres S. Etant donné qu'un ampli de puissance est caractérisé en large signal (donc non linéarité), les paramètres S (décrivent le comportement linéaire) ne sont plus rigoureux. Ces paramètres X vont nous permettre de mesurer les différentes paramètres utiles concernant la linéarité (genre P1dB, IIP3/OP3).Joie !
+
+Mercredi 21 août : Qucs gère très mal la simulation de l'équilibre harmonique (Paramètres S en large signal). Donc il faut se rabattre soit sur Keysight ADS ou NI AWR.
+
+Jeudi 22 août : A priori, Xyce (opensource) gère la balance harmonique. Pas de load pull sweep apparemment. 
+Compréhension AC power vs DC power.
+
+
+
+

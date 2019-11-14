@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name match_attenuator-rescue)(type Legacy)(uri ${KIPRJMOD}/match_attenuator-rescue.lib)(options "")(descr ""))
+)

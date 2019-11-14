@@ -1,0 +1,262 @@
+EESchema Schematic File Version 4
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Transistor_BJT:2N2219 Q1
+U 1 1 5D8CC205
+P 5700 4500
+F 0 "Q1" H 5890 4546 50  0000 L CNN
+F 1 "2N2219" H 5890 4455 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-39-3" H 5900 4425 50  0001 L CIN
+F 3 "http://www.onsemi.com/pub_link/Collateral/2N2219-D.PDF" H 5700 4500 50  0001 L CNN
+F 4 "Q" H 5700 4500 50  0001 C CNN "Spice_Primitive"
+F 5 "2N2219" H 5700 4500 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 5700 4500 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "2N2219.LIB" H 5700 4500 50  0001 C CNN "Spice_Lib_File"
+F 8 "3 2 1" H 5700 4500 50  0001 C CNN "Spice_Node_Sequence"
+	1    5700 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5D8CCBB5
+P 5250 4800
+F 0 "R1" H 5320 4846 50  0000 L CNN
+F 1 "82" H 5320 4755 50  0000 L CNN
+F 2 "" V 5180 4800 50  0001 C CNN
+F 3 "~" H 5250 4800 50  0001 C CNN
+	1    5250 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5D8CCF4E
+P 5250 4200
+F 0 "R2" H 5320 4246 50  0000 L CNN
+F 1 "220" H 5320 4155 50  0000 L CNN
+F 2 "" V 5180 4200 50  0001 C CNN
+F 3 "~" H 5250 4200 50  0001 C CNN
+	1    5250 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R Rc
+U 1 1 5D8CD273
+P 5800 4000
+F 0 "Rc" H 5870 4046 50  0000 L CNN
+F 1 "150" H 5870 3955 50  0000 L CNN
+F 2 "" V 5730 4000 50  0001 C CNN
+F 3 "~" H 5800 4000 50  0001 C CNN
+	1    5800 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R Re
+U 1 1 5D8CD850
+P 5800 4950
+F 0 "Re" H 5870 4996 50  0000 L CNN
+F 1 "120" H 5870 4905 50  0000 L CNN
+F 2 "" V 5730 4950 50  0001 C CNN
+F 3 "~" H 5800 4950 50  0001 C CNN
+	1    5800 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:VSOURCE V1
+U 1 1 5D8CE015
+P 3900 4950
+F 0 "V1" H 4128 4996 50  0000 L CNN
+F 1 "VSOURCE" H 4128 4905 50  0000 L CNN
+F 2 "" H 3900 4950 50  0001 C CNN
+F 3 "~" H 3900 4950 50  0001 C CNN
+F 4 "V" H 3900 4950 50  0001 C CNN "Spice_Primitive"
+F 5 "ac 1 sin(0 10m 10Meg)" H 3900 4950 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 3900 4950 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    3900 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:VSOURCE V2
+U 1 1 5D8CE6DB
+P 5500 3250
+F 0 "V2" H 5134 3204 50  0000 R CNN
+F 1 "VSOURCE" H 5134 3295 50  0000 R CNN
+F 2 "" H 5500 3250 50  0001 C CNN
+F 3 "~" H 5500 3250 50  0001 C CNN
+F 4 "V" H 5500 3250 50  0001 C CNN "Spice_Primitive"
+F 5 "dc 10" H 5500 3250 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 5500 3250 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    5500 3250
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5D8CED21
+P 4700 4500
+F 0 "C1" V 4448 4500 50  0000 C CNN
+F 1 "0.1u" V 4539 4500 50  0000 C CNN
+F 2 "" H 4738 4350 50  0001 C CNN
+F 3 "~" H 4700 4500 50  0001 C CNN
+	1    4700 4500
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C3
+U 1 1 5D8CF16C
+P 6500 4250
+F 0 "C3" V 6248 4250 50  0000 C CNN
+F 1 "0.1u" V 6339 4250 50  0000 C CNN
+F 2 "" H 6538 4100 50  0001 C CNN
+F 3 "~" H 6500 4250 50  0001 C CNN
+	1    6500 4250
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R RL
+U 1 1 5D8CF832
+P 7000 4600
+F 0 "RL" H 7070 4646 50  0000 L CNN
+F 1 "10Meg" H 7070 4555 50  0000 L CNN
+F 2 "" V 6930 4600 50  0001 C CNN
+F 3 "~" H 7000 4600 50  0001 C CNN
+	1    7000 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5D8D00D4
+P 5800 5100
+F 0 "#PWR?" H 5800 4850 50  0001 C CNN
+F 1 "GND" H 5805 4927 50  0000 C CNN
+F 2 "" H 5800 5100 50  0001 C CNN
+F 3 "" H 5800 5100 50  0001 C CNN
+	1    5800 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5D8D0794
+P 5250 4950
+F 0 "#PWR?" H 5250 4700 50  0001 C CNN
+F 1 "GND" H 5255 4777 50  0000 C CNN
+F 2 "" H 5250 4950 50  0001 C CNN
+F 3 "" H 5250 4950 50  0001 C CNN
+	1    5250 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5D8D0CFA
+P 7000 4750
+F 0 "#PWR?" H 7000 4500 50  0001 C CNN
+F 1 "GND" H 7005 4577 50  0000 C CNN
+F 2 "" H 7000 4750 50  0001 C CNN
+F 3 "" H 7000 4750 50  0001 C CNN
+	1    7000 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5D8D139A
+P 3900 5250
+F 0 "#PWR?" H 3900 5000 50  0001 C CNN
+F 1 "GND" H 3905 5077 50  0000 C CNN
+F 2 "" H 3900 5250 50  0001 C CNN
+F 3 "" H 3900 5250 50  0001 C CNN
+	1    3900 5250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5D8D1832
+P 5500 2950
+F 0 "#PWR?" H 5500 2700 50  0001 C CNN
+F 1 "GND" H 5505 2777 50  0000 C CNN
+F 2 "" H 5500 2950 50  0001 C CNN
+F 3 "" H 5500 2950 50  0001 C CNN
+	1    5500 2950
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 5D8D335C
+P 6150 4950
+F 0 "C2" H 6265 4996 50  0000 L CNN
+F 1 "0.1u" H 6265 4905 50  0000 L CNN
+F 2 "" H 6188 4800 50  0001 C CNN
+F 3 "~" H 6150 4950 50  0001 C CNN
+	1    6150 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5D8D3CD0
+P 6150 5100
+F 0 "#PWR?" H 6150 4850 50  0001 C CNN
+F 1 "GND" H 6155 4927 50  0000 C CNN
+F 2 "" H 6150 5100 50  0001 C CNN
+F 3 "" H 6150 5100 50  0001 C CNN
+	1    6150 5100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5800 4800 5800 4700
+Wire Wire Line
+	6150 4800 5800 4800
+Connection ~ 5800 4800
+Wire Wire Line
+	5250 4650 5250 4500
+Wire Wire Line
+	4850 4500 5250 4500
+Connection ~ 5250 4500
+Wire Wire Line
+	5250 4500 5250 4350
+Wire Wire Line
+	5500 4500 5250 4500
+Wire Wire Line
+	5800 4150 5800 4250
+Wire Wire Line
+	6350 4250 5800 4250
+Connection ~ 5800 4250
+Wire Wire Line
+	5800 4250 5800 4300
+Wire Wire Line
+	7000 4250 7000 4450
+Wire Wire Line
+	6650 4250 7000 4250
+Wire Wire Line
+	5500 3550 5500 3850
+Wire Wire Line
+	5500 3850 5800 3850
+Wire Wire Line
+	5500 3850 5250 3850
+Wire Wire Line
+	5250 3850 5250 4050
+Connection ~ 5500 3850
+Wire Wire Line
+	4550 4500 3900 4500
+Wire Wire Line
+	3900 4500 3900 4650
+Text GLabel 3700 4500 0    50   Input ~ 0
+Vin
+Text GLabel 7450 4250 2    50   Output ~ 0
+Vout
+Wire Wire Line
+	7450 4250 7000 4250
+Connection ~ 7000 4250
+Wire Wire Line
+	3700 4500 3900 4500
+Connection ~ 3900 4500
+$EndSCHEMATC

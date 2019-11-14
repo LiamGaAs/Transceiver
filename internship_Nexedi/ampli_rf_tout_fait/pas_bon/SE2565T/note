@@ -1,0 +1,14 @@
+Gain typique de 32 dB, avec Pin max de 12 dBm
+
+Le P1dB est atteint quand Pout = 30 dBm. 
+
+Pas d'infos quand à la valeur de la puissance
+pour que l'ampli  sature bien (i.e ne soit plus linéaire du tout.)
+Pas de graphiques non plus...
+
+Alors disons : Pin + gain = Puissance voulue  <= P1dB
+
+-2 dBm + 32 dB = 30 dBm <= 30 dBm 
+
+C'est limite.
+

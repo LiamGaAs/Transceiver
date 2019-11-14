@@ -1,0 +1,73 @@
+:Base RFSim99>main
+:Title RFSim99
+1 Introducing RFSim99
+2 Overview=IDoverview
+2 Limitations of RFSim99=IDlimitations
+2 Future Enhancements=IDfuture
+1 Getting Started
+2 The Basics
+3 The Schematic Editor=IDstarting
+3 Placing Components=IDGSplacecomps
+3 Adding Connecting Wires=IDGSwires
+3 Adding Ground Connections=IDGSground
+3 Adding Measurement Ports=IDGSports
+3 Starting Simulation=IDGSsimulation
+3 The Square Grid Display=IDGSsquaregrid
+3 The Polar Display=IDGSpolar
+3 The Smith Display=IDGSsmith
+3 The Numeric Display=IDGSnumeric
+2 Advanced
+3 A Match Network Example=IDgsmatch
+3 A Filter Circuit Example=IDfilterex
+3 A Tolerance Analysis Example=idgstolerance
+3 An S Parameter Example=IDgssparameter
+3 An Auto-Match Example=idgsautomatch
+3 A Stability Circle Example=IDgsstabilitycircle
+1 Schematic Capture
+2 Placing Components=IDPlacing
+2 Component Orientation=IDorientation
+2 Connecting Wires=IDwires
+2 Measurement Ports=IDports
+2 Starting Simulation=IDSimstart
+2 Printing=IDprinting
+2 Schematic Preferences=IDschemaprefs
+1 Simulation
+2 The Graph Window=IDGraphwin
+2 Changing The Graph Type=IDgraphtype
+2 Using the Tune Feature=IDtune
+2 Tolerance Analysis=idtolerance
+2 Stability Circles=idstability
+2 Printing=IDPrinting
+2 Graph Preferences=IDgraphprefs
+1 Component Models
+2 Resistor=IDresistor
+2 Capacitor=IDcapacitor
+2 Inductor=IDinductor
+2 Transmission Line=IDtransmissionline
+2 Transformer=IDtransformer
+2 S Parameter Files=IDsparameter
+2 Op-Amp=IDopamp
+1 Design Assistants
+2 Match Assistant=IDmatch
+2 Attenuator Assistant=IDatten
+2 Filter Assistant=IDfilter
+2 Auto Match=idautomatch
+1 The Calculator
+2 Resonance/Reactance=IDresonance
+2 Return Loss / VSWR=IDreturnloss
+2 Signal Level=IDsiglevel
+2 Frequency / Wavelength=IDfreq
+2 Thermal Noise=IDnoise
+1 Component Designer
+2 Inductor=IDindcalc
+2 Capacitor=IDcapcalc
+2 Transmission Line=IDtxlncalc
+2 Coupler=IDcouplercalc
+2 Splitter=IDsplittercalc
+1 Hints and Tips
+2 Using the Match Assistant to match complex impedances=IDhtcomplexmatch
+2 Analyzing Balanced Circuits=IDhtbalanced
+2 Upper and Lower Tolerance Limits=idhttolerancehint
+1 License Agreement and Disclaimer
+2 License Agreement=idlicenceagree
+2 Disclaimer=IDdisclaimer

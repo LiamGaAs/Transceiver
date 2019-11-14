@@ -1,0 +1,6 @@
+(sym_lib_table
+  (lib (name Analog)(type Legacy)(uri ${KIPRJMOD}/kicad-symbols-master/Analog.lib)(options "")(descr ""))
+  (lib (name Device)(type Legacy)(uri ${KIPRJMOD}/kicad-symbols-master/Device.lib)(options "")(descr ""))
+  (lib (name custom_sma)(type Legacy)(uri ${KIPRJMOD}/custom_sma.lib)(options "")(descr ""))
+  (lib (name filtre_lignes_couplees-rescue)(type Legacy)(uri ${KIPRJMOD}/filtre_lignes_couplees-rescue.lib)(options "")(descr ""))
+)

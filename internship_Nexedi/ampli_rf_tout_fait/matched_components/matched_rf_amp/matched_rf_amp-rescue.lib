@@ -1,0 +1,76 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# Screw_Terminal_01x02-Connector
+#
+DEF Screw_Terminal_01x02-Connector J 0 40 Y N 1 F N
+F0 "J" 0 100 50 H V C CNN
+F1 "Screw_Terminal_01x02-Connector" 0 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ TerminalBlock*:*
+$ENDFPLIST
+DRAW
+C 0 -100 25 1 1 6 N
+C 0 0 25 1 1 6 N
+S -50 50 50 -150 1 1 10 f
+P 2 1 1 6 -21 -87 13 -120 N
+P 2 1 1 6 -21 13 13 -20 N
+P 2 1 1 6 -14 -80 20 -113 N
+P 2 1 1 6 -14 20 20 -13 N
+X Pin_1 1 -200 0 150 R 50 50 1 1 P
+X Pin_2 2 -200 -100 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# TQP9111-custom_rf_amp
+#
+DEF TQP9111-custom_rf_amp TQ 0 40 Y Y 1 F N
+F0 "TQ" 0 1000 50 H V C CNN
+F1 "TQP9111-custom_rf_amp" 0 -956 50 H V C CNN
+F2 "" 0 1000 50 H I C CNN
+F3 "" 0 1000 50 H I C CNN
+DRAW
+C -350 400 50 0 1 0 F
+P 6 0 1 0 -400 500 550 500 550 -500 -450 -500 -450 500 -400 500 f
+X NC 1 -650 200 200 R 50 50 1 1 I
+X NC 10 200 -700 200 U 50 50 1 1 I
+X NC 11 750 -200 200 L 50 50 1 1 I
+X RF_out 12 750 -100 200 L 50 50 1 1 O
+X RF_out 13 750 0 200 L 50 50 1 1 O
+X RF_out 14 750 100 200 L 50 50 1 1 O
+X NC 15 750 200 200 L 50 50 1 1 O
+X Vbias 16 200 700 200 D 50 50 1 1 I
+X NC 17 100 700 200 D 50 50 1 1 I
+X Vcc2 18 0 700 200 D 50 50 1 1 I
+X NC 19 -100 700 200 D 50 50 1 1 I
+X RF_in 2 -650 100 200 R 50 50 1 1 I
+X Vcc1 20 -200 700 200 D 50 50 1 1 I
+X BP 21 400 -700 200 U 50 50 1 1 I
+X RF_in 3 -650 0 200 R 50 50 1 1 I
+X NC 4 -650 -200 200 R 50 50 1 1 I
+X RF_in 4 -650 -100 200 R 50 50 1 1 I
+X Iref1 6 -200 -700 200 U 50 50 1 1 I
+X NC 7 -100 -700 200 U 50 50 1 1 I
+X Iref2 8 0 -700 200 U 50 50 1 1 I
+X NC 9 100 -700 200 U 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# sma_connector-sma_custom_connector
+#
+DEF sma_connector-sma_custom_connector SMA 0 40 Y Y 1 F N
+F0 "SMA" -50 450 50 H V C CNN
+F1 "sma_connector-sma_custom_connector" 0 -406 50 H V C CNN
+F2 "" -50 450 50 H I C CNN
+F3 "" -50 450 50 H I C CNN
+DRAW
+P 5 0 1 0 -250 200 200 200 200 -200 -250 -200 -250 200 f
+X RF_in/out 1 -450 0 200 R 50 50 1 1 B
+X GND 2 -450 150 200 R 50 50 1 1 I
+X GND 3 -450 -150 200 R 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+#End Library

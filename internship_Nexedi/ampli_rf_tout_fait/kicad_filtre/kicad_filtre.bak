@@ -1,0 +1,236 @@
+EESchema Schematic File Version 4
+LIBS:kicad_filtre-cache
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L kicad_filtre-rescue:sma_jack-custom_sma C3
+U 1 1 5D260EE4
+P 3600 4200
+F 0 "C3" H 3658 4615 50  0000 C CNN
+F 1 "sma_jack-custom_sma" H 3658 4524 50  0000 C CNN
+F 2 "sma_custom:CONSMA003.062-G" H 3600 3850 50  0001 C CNN
+F 3 "" H 3600 3850 50  0001 C CNN
+	1    3600 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L kicad_filtre-rescue:sma_jack-custom_sma C4
+U 1 1 5D2618D9
+P 7000 4200
+F 0 "C4" H 6672 4154 50  0000 R CNN
+F 1 "sma_jack-custom_sma" H 6672 4245 50  0000 R CNN
+F 2 "sma_custom:CONSMA003.062-G" H 7000 3850 50  0001 C CNN
+F 3 "" H 7000 3850 50  0001 C CNN
+	1    7000 4200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4200 4050 4000 4050
+Wire Wire Line
+	4000 4200 4600 4200
+$Comp
+L power:GND #PWR0101
+U 1 1 5D22F6D6
+P 4200 3850
+F 0 "#PWR0101" H 4200 3600 50  0001 C CNN
+F 1 "GND" H 4205 3677 50  0000 C CNN
+F 2 "" H 4200 3850 50  0001 C CNN
+F 3 "" H 4200 3850 50  0001 C CNN
+	1    4200 3850
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4200 3850 4200 4050
+$Comp
+L power:GND #PWR0102
+U 1 1 5D22FADE
+P 4000 4550
+F 0 "#PWR0102" H 4000 4300 50  0001 C CNN
+F 1 "GND" H 4005 4377 50  0000 C CNN
+F 2 "" H 4000 4550 50  0001 C CNN
+F 3 "" H 4000 4550 50  0001 C CNN
+	1    4000 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 5D22FE83
+P 6600 4550
+F 0 "#PWR0103" H 6600 4300 50  0001 C CNN
+F 1 "GND" H 6605 4377 50  0000 C CNN
+F 2 "" H 6600 4550 50  0001 C CNN
+F 3 "" H 6600 4550 50  0001 C CNN
+	1    6600 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0104
+U 1 1 5D230171
+P 6600 3850
+F 0 "#PWR0104" H 6600 3600 50  0001 C CNN
+F 1 "GND" H 6605 3677 50  0000 C CNN
+F 2 "" H 6600 3850 50  0001 C CNN
+F 3 "" H 6600 3850 50  0001 C CNN
+	1    6600 3850
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6600 3850 6600 4050
+Wire Wire Line
+	6600 4550 6600 4350
+Wire Wire Line
+	4000 4550 4000 4350
+$Comp
+L kicad_filtre-rescue:C-Device C1
+U 1 1 5D230D97
+P 4650 4450
+F 0 "C1" H 4765 4496 50  0000 L CNN
+F 1 "1u" H 4765 4405 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-1608-08_AVX-J_Pad1.25x1.05mm_HandSolder" H 4688 4300 50  0001 C CNN
+F 3 "~" H 4650 4450 50  0001 C CNN
+	1    4650 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L kicad_filtre-rescue:C-Device C2
+U 1 1 5D231001
+P 5750 4450
+F 0 "C2" H 5865 4496 50  0000 L CNN
+F 1 "1u" H 5865 4405 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-1608-08_AVX-J_Pad1.25x1.05mm_HandSolder" H 5788 4300 50  0001 C CNN
+F 3 "~" H 5750 4450 50  0001 C CNN
+	1    5750 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L kicad_filtre-rescue:L-Device L1
+U 1 1 5D2313E9
+P 4600 3950
+F 0 "L1" H 4653 3996 50  0000 L CNN
+F 1 "1u" H 4653 3905 50  0000 L CNN
+F 2 "Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4600 3950 50  0001 C CNN
+F 3 "~" H 4600 3950 50  0001 C CNN
+	1    4600 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L kicad_filtre-rescue:L-Device L2
+U 1 1 5D23179D
+P 5850 3950
+F 0 "L2" H 5903 3996 50  0000 L CNN
+F 1 "1u" H 5903 3905 50  0000 L CNN
+F 2 "Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 5850 3950 50  0001 C CNN
+F 3 "~" H 5850 3950 50  0001 C CNN
+	1    5850 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 4100 4600 4200
+Connection ~ 4600 4200
+Wire Wire Line
+	4600 4200 4650 4200
+Wire Wire Line
+	4650 4300 4650 4200
+Connection ~ 4650 4200
+Wire Wire Line
+	4650 4200 5750 4200
+Wire Wire Line
+	5850 4100 5850 4200
+Connection ~ 5850 4200
+Wire Wire Line
+	5850 4200 6600 4200
+Wire Wire Line
+	5750 4300 5750 4200
+Connection ~ 5750 4200
+Wire Wire Line
+	5750 4200 5850 4200
+$Comp
+L power:GND #PWR0105
+U 1 1 5D232867
+P 4650 4600
+F 0 "#PWR0105" H 4650 4350 50  0001 C CNN
+F 1 "GND" H 4655 4427 50  0000 C CNN
+F 2 "" H 4650 4600 50  0001 C CNN
+F 3 "" H 4650 4600 50  0001 C CNN
+	1    4650 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0106
+U 1 1 5D232C8C
+P 5750 4600
+F 0 "#PWR0106" H 5750 4350 50  0001 C CNN
+F 1 "GND" H 5755 4427 50  0000 C CNN
+F 2 "" H 5750 4600 50  0001 C CNN
+F 3 "" H 5750 4600 50  0001 C CNN
+	1    5750 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0107
+U 1 1 5D233015
+P 4600 3800
+F 0 "#PWR0107" H 4600 3550 50  0001 C CNN
+F 1 "GND" H 4605 3627 50  0000 C CNN
+F 2 "" H 4600 3800 50  0001 C CNN
+F 3 "" H 4600 3800 50  0001 C CNN
+	1    4600 3800
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0108
+U 1 1 5D233582
+P 5850 3800
+F 0 "#PWR0108" H 5850 3550 50  0001 C CNN
+F 1 "GND" H 5855 3627 50  0000 C CNN
+F 2 "" H 5850 3800 50  0001 C CNN
+F 3 "" H 5850 3800 50  0001 C CNN
+	1    5850 3800
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x02 J1
+U 1 1 5D2782A0
+P 5100 3750
+F 0 "J1" V 5064 3562 50  0000 R CNN
+F 1 "Bullshit_driver" V 4973 3562 50  0000 R CNN
+F 2 "borniers:PRT-08084" H 5100 3750 50  0001 C CNN
+F 3 "~" H 5100 3750 50  0001 C CNN
+	1    5100 3750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0109
+U 1 1 5D278D28
+P 5200 3950
+F 0 "#PWR0109" H 5200 3700 50  0001 C CNN
+F 1 "GND" H 5205 3777 50  0000 C CNN
+F 2 "" H 5200 3950 50  0001 C CNN
+F 3 "" H 5200 3950 50  0001 C CNN
+	1    5200 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0110
+U 1 1 5D279097
+P 5100 3950
+F 0 "#PWR0110" H 5100 3700 50  0001 C CNN
+F 1 "GND" H 5105 3777 50  0000 C CNN
+F 2 "" H 5100 3950 50  0001 C CNN
+F 3 "" H 5100 3950 50  0001 C CNN
+	1    5100 3950
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

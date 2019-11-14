@@ -1,0 +1,94 @@
+EESchema Schematic File Version 4
+LIBS:ampli_rf-cache
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:L L?
+U 1 1 5D573106
+P 5900 3000
+F 0 "L?" H 5953 3046 50  0000 L CNN
+F 1 "L" H 5953 2955 50  0000 L CNN
+F 2 "" H 5900 3000 50  0001 C CNN
+F 3 "~" H 5900 3000 50  0001 C CNN
+	1    5900 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:L L?
+U 1 1 5D5737B9
+P 5450 3200
+F 0 "L?" H 5503 3246 50  0000 L CNN
+F 1 "L" H 5503 3155 50  0000 L CNN
+F 2 "" H 5450 3200 50  0001 C CNN
+F 3 "~" H 5450 3200 50  0001 C CNN
+	1    5450 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:L L?
+U 1 1 5D573AFA
+P 5450 3700
+F 0 "L?" H 5503 3746 50  0000 L CNN
+F 1 "L" H 5503 3655 50  0000 L CNN
+F 2 "" H 5450 3700 50  0001 C CNN
+F 3 "~" H 5450 3700 50  0001 C CNN
+	1    5450 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5D5741EA
+P 5900 2600
+F 0 "R?" H 5970 2646 50  0000 L CNN
+F 1 "R" H 5970 2555 50  0000 L CNN
+F 2 "" V 5830 2600 50  0001 C CNN
+F 3 "~" H 5900 2600 50  0001 C CNN
+	1    5900 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5D574553
+P 5450 2600
+F 0 "R?" H 5520 2646 50  0000 L CNN
+F 1 "R" H 5520 2555 50  0000 L CNN
+F 2 "" V 5380 2600 50  0001 C CNN
+F 3 "~" H 5450 2600 50  0001 C CNN
+	1    5450 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5D574E4E
+P 5900 3900
+F 0 "R?" H 5970 3946 50  0000 L CNN
+F 1 "R" H 5970 3855 50  0000 L CNN
+F 2 "" V 5830 3900 50  0001 C CNN
+F 3 "~" H 5900 3900 50  0001 C CNN
+	1    5900 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5D5751DA
+P 5450 4100
+F 0 "R?" H 5520 4146 50  0000 L CNN
+F 1 "R" H 5520 4055 50  0000 L CNN
+F 2 "" V 5380 4100 50  0001 C CNN
+F 3 "~" H 5450 4100 50  0001 C CNN
+	1    5450 4100
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

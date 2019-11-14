@@ -1,0 +1,63 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# Screw_Terminal_01x02-Connector
+#
+DEF Screw_Terminal_01x02-Connector J 0 40 Y N 1 F N
+F0 "J" 0 100 50 H V C CNN
+F1 "Screw_Terminal_01x02-Connector" 0 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ TerminalBlock*:*
+$ENDFPLIST
+DRAW
+C 0 -100 25 1 1 6 N
+C 0 0 25 1 1 6 N
+S -50 50 50 -150 1 1 10 f
+P 2 1 1 6 -21 -87 13 -120 N
+P 2 1 1 6 -21 13 13 -20 N
+P 2 1 1 6 -14 -80 20 -113 N
+P 2 1 1 6 -14 20 20 -13 N
+X Pin_1 1 -200 0 150 R 50 50 1 1 P
+X Pin_2 2 -200 -100 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# TQL9093-LNAs
+#
+DEF TQL9093-LNAs LNA 0 40 Y Y 1 F N
+F0 "LNA" 0 300 50 H V C CNN
+F1 "TQL9093-LNAs" 250 -656 50 H V C CNN
+F2 "" 0 300 50 H I C CNN
+F3 "" 0 300 50 H I C CNN
+DRAW
+P 5 0 1 0 -300 250 350 250 350 -600 -300 -600 -300 250 f
+X Vbias 1 -500 150 200 R 50 50 1 1 I
+X RF_in 2 -500 -50 200 R 50 50 1 1 I
+X NC 3 -500 -250 200 R 50 50 1 1 I
+X NC 4 -500 -450 200 R 50 50 1 1 I
+X NC 5 550 -450 200 L 50 50 1 1 I
+X Shut_down 6 550 -250 200 L 50 50 1 1 I
+X RF_out 7 550 -50 200 L 50 50 1 1 O
+X NC 8 550 150 200 L 50 50 1 1 I
+X BS 9 0 -800 200 U 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# sma_connector-sma_custom_connector
+#
+DEF sma_connector-sma_custom_connector SMA 0 40 Y Y 1 F N
+F0 "SMA" -50 450 50 H V C CNN
+F1 "sma_connector-sma_custom_connector" 0 -406 50 H V C CNN
+F2 "" -50 450 50 H I C CNN
+F3 "" -50 450 50 H I C CNN
+DRAW
+P 5 0 1 0 -250 200 200 200 200 -200 -250 -200 -250 200 f
+X RF_in/out 1 -450 0 200 R 50 50 1 1 B
+X GND 2 -450 150 200 R 50 50 1 1 I
+X GND 3 -450 -150 200 R 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+#End Library

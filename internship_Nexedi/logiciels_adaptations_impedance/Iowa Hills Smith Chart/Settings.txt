@@ -1,0 +1,8 @@
+1 , Version 3.0 , Version String
+10 , Here for FileReadSave.cpp , Sampling Frequency
+12 , 20 , Plot Threshold
+30 , 1 , Mouse Read Out Menu
+50 ,  , Previous File
+50 ,  , Previous File
+50 ,  , Previous File
+50 ,  , Previous File

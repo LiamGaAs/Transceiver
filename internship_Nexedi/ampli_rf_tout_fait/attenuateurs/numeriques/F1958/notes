@@ -1,0 +1,22 @@
+8 bits contrôlent l'atténuation (précision multipliée par 2 à chaque pin ajouté, en commençant par 0.25 dB d'atténuation) .
+3.3V pour un HAUT
+
+0.5V pour un BAS (la masse peut aussi marcher.)
+
+Pour l'atténuation, il y a le choix entre le mode parallèle direct et le mode parallèle en basule.
+
+Les 2 sont contrôlés par les bits D0 à D7.
+
+Pour le mode parallèle, il est séléctionné en mettant le pin Vmode flottant, ou état bas et le pin LE à l'état haut.
+l'appareil va réagir immédiatiement à la moindre variation de tension sur les pins D.
+CLK et DATA peuvent être groundés.
+
+Pour le mode bascule, voici comment procéder : 
+
+1-Mettre Vmode à bas
+2-Mettre LE à bas.
+3-ajuster les pins de contrôle à l'atténuation désirée.
+4-Mettre LE à haut.
+
+
+11 résistances et 11 capacités pour faire fonctionner correctement l'atténuateur.

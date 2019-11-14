@@ -1,0 +1,14 @@
+.title KiCad schematic
+.include "2N2219.LIB"
+V1 in GND ac 1 sin(0 50m 1Meg)
+V2 Net-_R1-Pad1_ GND dc 10
+Q1 Net-_Cc1-Pad2_ Net-_Cb1-Pad1_ Net-_Ce1-Pad1_ 2N2219
+Re1 Net-_Ce1-Pad1_ GND 10
+Rc1 Net-_R1-Pad1_ Net-_Cc1-Pad2_ 15
+R1 Net-_R1-Pad1_ Net-_Cb1-Pad1_ 300
+R2 Net-_Cb1-Pad1_ GND 100
+Cb1 Net-_Cb1-Pad1_ in 10u
+Cc1 out Net-_Cc1-Pad2_ 10u
+Ce1 Net-_Ce1-Pad1_ GND 10u
+RL1 out GND 10Meg
+.end

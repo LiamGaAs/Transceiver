@@ -1,0 +1,3 @@
+Pour importer un fichier paramètre S dans QUCS sous ubuntu, copier le fichier s2p voulu dans le répertoire du projet Qucs.
+
+Concrètement : copier le .s2p dans /home/liam/.wine/drive_c/users/liam/.qucs/dossier_projet

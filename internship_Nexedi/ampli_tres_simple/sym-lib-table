@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name ampli_tres_simple-rescue)(type Legacy)(uri ${KIPRJMOD}/ampli_tres_simple-rescue.lib)(options "")(descr ""))
+)
